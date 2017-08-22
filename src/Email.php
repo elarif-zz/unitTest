@@ -12,7 +12,7 @@ final class Email
 		return true;
 	}
 	
-	private static function hasAroBase($email){
+	private static function hasArobase($email){
 		return strpos($email,'@');
 	}
 }

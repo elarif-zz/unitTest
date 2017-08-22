@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 final class EmailTest extends TestCase{
 	public function testShouldReturnTrueWhenValidEmail(){
-		$validEmails = [    'prettyandsimple@example.com',
+		$validEmails = ['prettyandsimple@example.com',
 			'very.common@example.com',
 			'disposable.style.email.with+symbol@example.com',
 			'other.email-with-dash@example.com',
@@ -26,8 +26,13 @@ final class EmailTest extends TestCase{
 		}
 	}
 
-	public function testShouldReturnFalseWhenThereNoAroBase(){
+	public function testShouldReturnFalseWhenThereNoArobase(){
 		$value = 'Abc.example.com';
+		$this->assertEquals(false,Email::validate($value));
+	}
+
+	public function testShouldReturnFalseWhenThereMoreThanOneArobase(){
+		$value = 'A@b@c@example.com';
 		$this->assertEquals(false,Email::validate($value));
 	}
 }
