@@ -10,9 +10,9 @@ use PHPUnit\Framework\TestCase;
 
 final class EmailTest extends TestCase
 {
-	public function testCanBeUsedAsString()
+	public function testShouldReturnTrueWhenValidEmail()
 	{
-		$data = [    'prettyandsimple@example.com',
+		$validEmails = [    'prettyandsimple@example.com',
 			'very.common@example.com',
 			'disposable.style.email.with+symbol@example.com',
 			'other.email-with-dash@example.com',
@@ -23,13 +23,13 @@ final class EmailTest extends TestCase
 			'example-indeed@strange-example.com',
 			'admin@mailserver1'];
 
-		foreach($data as $value)
+		foreach($validEmails as $email)
 		{
-			$this->assertEquals(true,Email::validate($value));
+			$this->assertEquals(true,Email::validate($email));
 		}
 	}
 
-	public function shouldReturnFalseWhenThereNoAroBase()
+	public function testShouldReturnFalseWhenThereNoAroBase()
 	{
 			
 		$value = 'Abc.example.com';
