@@ -6,13 +6,9 @@ final class Email
 {
 
 	public static function validate($email):bool{
-		if(Email::hasOnlyOneArobase($email)){
-			return false;
-		}
-		if(Email::hasAroBase($email) == false ){
-			return false;
-		}
-		return true;
+		$result = Email::hasOnlyOneArobase($email);
+		$result = Email::hasArobase($email);
+		return $result;
 	}
 	
 	private static function hasArobase($email){
