@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-final class Email
+class Email
 {
 
 	public  function validate($email):bool{

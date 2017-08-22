@@ -21,7 +21,7 @@ final class EmailTest extends TestCase{
 			'example-indeed@strange-example.com',
 			'admin@mailserver1'];
 
-	        $mail = $this->createMock(Mail::class);
+	        $mail = $this->createMock(Email::class);
 		foreach($validEmails as $email){
 			$this->assertEquals(true,$mail->validate($email));
 		}
@@ -29,13 +29,13 @@ final class EmailTest extends TestCase{
 
 	public function testShouldReturnFalseWhenThereNoArobase(){
 		$value = 'Abc.example.com';
-	        $mail = $this->createMock(Mail::class);
+	        $mail = $this->createMock(Email::class);
 		$this->assertEquals(false,$mail->validate($value));
 	}
 
 	public function testShouldReturnFalseWhenThereMoreThanOneArobase(){
 		$value = 'A@b@c@example.com';
-	        $mail = $this->createMock(Mail::class);
+	        $mail = $this->createMock(Email::class);
 		$this->assertEquals(false,$mail->validate($value));
 	}
 }
