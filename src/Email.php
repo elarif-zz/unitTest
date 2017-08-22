@@ -7,7 +7,7 @@ final class Email
 
 	public static function validate($email):bool{
 		$result = true;
-		if(Email::hasOnlyOneArobase($email) == false || Email::hasArobase($email)== false)
+		if(!(Email::hasOnlyOneArobase($email) && Email::hasOnlyOneArobase($email)))
 		{
 			$result = false;
 		}
