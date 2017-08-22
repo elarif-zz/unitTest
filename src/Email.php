@@ -12,11 +12,7 @@ final class Email
 	}
 
 	private static function hasArobase($email){
-		$result = false;
-		if(strpos($email,'@') !== false)
-		{
-			$result = true;
-		}
+		$result = (strpos($email,'@') !==false);
 		return $result;
 	}
 
