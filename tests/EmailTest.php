@@ -8,10 +8,8 @@ use PHPUnit\Framework\TestCase;
  *@covers Email
  */
 
-final class EmailTest extends TestCase
-{
-	public function testShouldReturnTrueWhenValidEmail()
-	{
+final class EmailTest extends TestCase{
+	public function testShouldReturnTrueWhenValidEmail(){
 		$validEmails = [    'prettyandsimple@example.com',
 			'very.common@example.com',
 			'disposable.style.email.with+symbol@example.com',
@@ -23,15 +21,12 @@ final class EmailTest extends TestCase
 			'example-indeed@strange-example.com',
 			'admin@mailserver1'];
 
-		foreach($validEmails as $email)
-		{
+		foreach($validEmails as $email){
 			$this->assertEquals(true,Email::validate($email));
 		}
 	}
 
-	public function testShouldReturnFalseWhenThereNoAroBase()
-	{
-			
+	public function testShouldReturnFalseWhenThereNoAroBase(){
 		$value = 'Abc.example.com';
 		$this->assertEquals(false,Email::validate($value));
 	}
