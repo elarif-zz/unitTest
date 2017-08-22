@@ -20,9 +20,10 @@ final class EmailTest extends TestCase{
 			'"very.(),:;<>[]\".VERY.\"very@\\ \"very\".unusual"@strange.example.com',
 			'example-indeed@strange-example.com',
 			'admin@mailserver1'];
+		$mail = new Email();
 
 		foreach($validEmails as $email){
-			$this->assertEquals(true,Email::validate($email));
+			$this->assertEquals(true,$mail->validate($email));
 		}
 	}
 
