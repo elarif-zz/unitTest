@@ -6,13 +6,13 @@ final class Email
 {
 
 	public static function validate($email):bool{
-		if(hasAroBase($email) == false ){
+		if(Email::hasAroBase($email) == false ){
 			return false;
 		}
 		return true;
 	}
 	
-	private function hasAroBase($email){
+	private static function hasAroBase($email){
 		return strpos($email,'@');
 	}
 }
