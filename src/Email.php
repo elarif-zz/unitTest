@@ -7,6 +7,18 @@ final class Email
 
 	public static function validate($email):bool
 	{
-		return true;
+		HasAroBase($email);
+	}
+	
+	private function HasAroBase($email)
+	{
+		if(strpos($email,'@') !== false)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }
