@@ -37,7 +37,7 @@ final class EmailTest extends TestCase{
 	public function testShouldReturnFalseWhenThereMoreThanOneArobase(){
 		$value = 'A@b@c@example.com';
 		$mail = $this->createMock(Email::class);
-		$mail->method('hasOnlyOneArobase')->willReturn(true);
+		//$mail->method('hasOnlyOneArobase')->willReturn(true);
 		$this->assertEquals(false,$mail->validate($value));
 	}
 }
