@@ -10,16 +10,14 @@ final class Email
 		$result = Email::hasArobase($email);
 		return $result;
 	}
-	
+
 	private static function hasArobase($email){
+		$result = false;
 		if(strpos($email,'@') !== false)
 		{
-			return true;
+			$result = true;
 		}
-		else
-		{
-			return false;
-		}
+		return $result;
 	}
 
 	private static function hasOnlyOneArobase($email){
