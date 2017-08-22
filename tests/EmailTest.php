@@ -7,9 +7,10 @@ use PHPUnit\Framework\TestCase;
 /**
  *@covers Email
  */
+
 final class EmailTest extends TestCase
 {
-	public function testCanBeUsedAsString(): void
+	public function testCanBeUsedAsString()
 	{
 		$this->assertEquals(true,Email::validate('Abc@example.com'));
 	}

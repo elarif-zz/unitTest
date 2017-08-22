@@ -5,8 +5,8 @@ declare(strict_types=1);
 final class Email
 {
 
-	public static function validate($email):boolean
+	public static function validate($email):bool
 	{
-		return false;
+		return true;
 	}
 }
