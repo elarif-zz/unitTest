@@ -17,7 +17,7 @@ final class Email
 	}
 
 	private static function hasOnlyOneArobase($email):bool{
-		$result = (substr_count($email,'@') !== 0);
+		$result = (substr_count($email,'@') == 1);
 		return $result;
 
 	}
