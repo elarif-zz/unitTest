@@ -23,6 +23,7 @@ final class EmailTest extends TestCase{
 
 		$mail = $this->createMock(Email::class);
 		$mail->method('hasArobase')->willReturn(true);
+		$mail->method('hasOnlyOneArobase')->willReturn(true);
 		foreach($validEmails as $email){
 			$this->assertEquals(true,$mail->validate($email));
 		}

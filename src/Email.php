@@ -14,12 +14,12 @@ class Email
 		return $result;
 	}
 
-	private  function hasArobase($email):bool{
+	public  function hasArobase($email):bool{
 		$result = (strpos($email,'@') !==false);
 		return $result;
 	}
 
-	private  function hasOnlyOneArobase($email):bool{
+	public  function hasOnlyOneArobase($email):bool{
 		$result = (substr_count($email,'@') == 1);
 		return $result;
 	}
