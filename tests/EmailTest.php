@@ -28,11 +28,13 @@ final class EmailTest extends TestCase{
 
 	public function testShouldReturnFalseWhenThereNoArobase(){
 		$value = 'Abc.example.com';
-		$this->assertEquals(false,Email::validate($value));
+		$mail = new Email();
+		$this->assertEquals(false,$mail->validate($value));
 	}
 
 	public function testShouldReturnFalseWhenThereMoreThanOneArobase(){
 		$value = 'A@b@c@example.com';
-		$this->assertEquals(false,Email::validate($value));
+		$mail = new Email();
+		$this->assertEquals(false,$mail->validate($value));
 	}
 }
