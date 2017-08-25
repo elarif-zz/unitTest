@@ -50,6 +50,8 @@ final class EmailTest extends TestCase{
 		);
 		$result = Quick::check(1000, $stringsAreNeverNumeric);
 		var_dump($result);
+		echo $result;
+		print_r($result);
 	}
 
 }
