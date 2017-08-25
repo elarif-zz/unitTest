@@ -27,6 +27,8 @@ Session.vim
 .netrwhist
 # auto-generated tag files
 tags
+vendor/*
+composer.lock
 
 # End of https://www.gitignore.io/api/vim,linux
 

@@ -1,8 +1,9 @@
 <?php
-
 declare(strict_types=1);
-
+include "vendor/autoload.php";
 use PHPUnit\Framework\TestCase;
+use QCheck\Generator as Gen;
+use QCheck\Quick;
 
 /**
  *@covers Email
@@ -39,4 +40,16 @@ final class EmailTest extends TestCase{
 		$value = 'A@b@c@example.com';
 		$this->assertEquals(false,$mail->validate($value));
 	}
+
+	public function testQuickCheck(){
+		$stringsAreNeverNumeric = Gen::forAll(
+			[Gen::asciiStrings()],
+			function($str) {
+				return !is_numeric($str);
+			}
+		);
+		$result = Quick::check(1000, $stringsAreNeverNumeric);
+		var_dump($result);
+	}
+
 }
