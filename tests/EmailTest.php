@@ -15,7 +15,7 @@ final class EmailTest extends TestCase{
 			[Gen::strings()],
 			function($str) {
 				$mail = new Email();
-				return $mail->validate(str_replace("@",' ',$str));
+				return $mail->validate(str_replace("@",'',$str));
 			});
 		$result = Quick::check(1000, $stringsWithoutMail);
 		$this->assertFalse($result['result']);
