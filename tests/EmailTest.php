@@ -31,8 +31,6 @@ final class EmailTest extends TestCase{
 	}
 
 	public function testShouldReturnFalseWhenThereNoArobase(){
-		//$value = 'Abc.example.com';
-		$mail = $this->createMock(Email::class);
 		$stringsAreNeverNumeric = Gen::forAll(
 			[Gen::strings()],
 			function($str) {
@@ -40,24 +38,10 @@ final class EmailTest extends TestCase{
 			});
 		$result = Quick::check(1000, $stringsAreNeverNumeric);
 		$this->assertFalse($result['result']);
-
-		//$this->assertEquals(false,$mail->validate($value));
 	}
 
 	public function testShouldReturnFalseWhenThereMoreThanOneArobase(){
 		$value = 'A@b@c@example.com';
 		$this->assertEquals(false,$mail->validate($value));
 	}
-
-	/*public function testQuickCheck(){
-		$stringsAreNeverNumeric = Gen::forAll(
-			[Gen::asciiStrings()],
-			function($str) {
-				return !is_numeric($str);
-			});
-		$result = Quick::check(1000, $stringsAreNeverNumeric);
-		$this->assertFalse($result['result']);
-	}*/
-
-
 }
