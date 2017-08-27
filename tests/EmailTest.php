@@ -11,10 +11,10 @@ use QCheck\Quick;
 
 final class EmailTest extends TestCase{
 	public function testShouldReturnFalseWhenThereNoArobase(){
-		$mail = new Email();
 		$stringsWithoutMail = Gen::forAll(
 			[Gen::strings()],
 			function($str) {
+				$mail = new Email();
 				$mail->validate(str_replace("@",' ',$str));
 			});
 		$result = Quick::check(1000, $stringsWithoutMail);
